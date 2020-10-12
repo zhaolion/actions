@@ -1,0 +1,26 @@
+name: 'k8s image sync'
+description: An action for Kubernetes gcr.io image Sync
+author: zhaoliangsyn@gmail.com
+branding:
+  color: blue
+  icon: code
+inputs:
+  username:
+    description: 'Username used to login docker registry'
+    required: true
+  password:
+    description: 'Password used to login docker registry'
+    required: true
+  registry:
+    description: 'Docker registry server address'
+    required: false
+    default: ''
+  repository:
+    description: 'docker image repository name'
+    required: true
+  images:
+    description: 'image list file url'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
